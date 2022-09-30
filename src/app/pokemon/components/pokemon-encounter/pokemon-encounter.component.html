@@ -1,16 +1,7 @@
 <ng-container *ngIf="randomEncounter$ | async as randomEncounter; else loading">
   <h1>A wild {{randomEncounter.name | titlecase }} appreared!</h1>
 
-<!--  <div class="sprite-mapper" style="    width: 150px; height: 190px; position: relative; border: 1px solid red;">-->
-<!--    <div class="pokesprite pokemon" [ngClass]="randomEncounter.name" style="transform: scale(4);-->
-<!--    position: absolute;-->
-<!--    bottom: 80px;-->
-<!--    border: 1px solid lime;-->
-<!--    left: 50%;-->
-<!--    margin-left: -35px;"></div>-->
-<!--  </div>-->
-
-  <div class="pokesprite pokemon" [ngClass]="randomEncounter.name"></div>
+  <img class="pokemonsprite" src="{{randomEncounter.sprites['front_default']}}">
 
   <div id="actions">
     <span (click)="catchPokemon(randomEncounter)">Catch</span>
