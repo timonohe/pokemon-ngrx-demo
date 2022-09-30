@@ -1,0 +1,21 @@
+<h1>Catched Pokémon</h1>
+
+<ng-container *ngIf="catchedPokemon$ | async as catchedPokemon">
+  <ng-container *ngIf="catchedPokemon.length > 0; else noPokemonCatched">
+    <p class="info-box">
+      <a [routerLink]="['/pokemon/encounter']">Weitere Pokemon fangen!</a>
+    </p>
+
+    <div class="catched-pokemon">
+      <app-cachted-pokemon-info *ngFor="let pokemon of catchedPokemon" [pokemon]="pokemon"></app-cachted-pokemon-info>
+    </div>
+  </ng-container>
+
+  <ng-template #noPokemonCatched>
+    <div class="info-box">
+      <div>You haven't caught any Pokémon yet?</div>
+      <br />
+      <a [routerLink]="['/pokemon', 'encounter']">Into the tall grass!</a>
+    </div>
+  </ng-template>
+</ng-container>

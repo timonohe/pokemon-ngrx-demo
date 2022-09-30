@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "pokemon";
+  src: url("./assets/fonts/PokemonGb-RAeo.ttf");
+}
+
+body, html {
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: "pokemon", sans-serif;
+
+  background-color: #1C4CBD;
+}
